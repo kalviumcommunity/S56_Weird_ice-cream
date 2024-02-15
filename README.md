@@ -10,8 +10,8 @@ Search - You can search for various different flavours as per the users wish and
 Search Functionality - We could implement a filter that allows users to only see flavors that match certain criteria, such as flavor category, ingredient, or popularity.
 
 Flavours - User can try or look for each and different flavours, can also try weird flavours like ,
-Wasabi Ginger Ice Cream
-Avocado Bacon Ice Cream
+Wasabi Ginger Ice Cream.
+Avocado Bacon Ice Cream.
 Blue Cheese and Honey Ice Cream.
 
 
