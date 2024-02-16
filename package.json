@@ -1,0 +1,11 @@
+{
+  "name": "s56_weird_ice-cream",
+  "version": "1.0.0",
+  "description": "**Project- Weird Ice-cream flavour**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
