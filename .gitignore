@@ -1,3 +1,2 @@
-./Node_modules
-./package-lock.json
-./Endpoint.env
+./node_modules
+.env
