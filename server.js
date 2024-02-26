@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
-const port = process.env.PUBLIC_PORT;
+const port = 3000;
 const mongoose = require('mongoose');
-const mongodb = require("./config");
+const mongodb = require("./Config/db");
+const route = require("./route")
+
 
 // define the ping route
 app.get("/",(req , res )=>{res.send("This is the first route page")})
 app.get("/ping",(req , res )=>{res.send("pong")})
+app.use(route)
 
 const connectToDB = async () => {
   try {
@@ -32,7 +35,7 @@ const disconnectFromDB = async () => {
 
 if (require.main === module) {
   app.listen(port, () => {
-    console.log(`🚀 server running on PORT: ${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
   });
 }
 
