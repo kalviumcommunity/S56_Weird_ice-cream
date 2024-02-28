@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Kode+Mono:wght@400..700&display=swap'); */
+body{
+    background-image:url("Untitled design.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+.navbar{
+    display: flex;
+    background-color: rgb(249, 169, 169);
+    color: black;
+    height: 90px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right:-8px;
+}
+.input{
+    height: 20px;
+    width: 150px;
+    border:none;
+    padding-left: 20px;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    padding-top: 10px;
+    list-style-type: none;
+    
+}
+li{
+    font-size: 20px;
+    font-family: "Kode Mono", monospace;
+}
+
+.div1{
+    display: flex;
+    margin-left: 600px;
+}
+.input{
+    width: 600px;
+    margin-top: 25px;
+    margin-left: 30px;
+    border-radius: 30px;
+    height: 30px;
+
+}
+.image img{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin-left: 900px;
+    margin-top: 120px;
+}
+.text{
+    background-color: rgb(247, 132, 132);
+    height: 250px;
+    width: 600px;
+    padding-left: 60px;
+    padding-top: 60px;
+    border-radius: 50px;
+    margin-left: 60px;
+    font-family: "Kode Mono", monospace;
+    font-size: 14px;
+    margin-top: -300px;
+
+    
+}
+.text1{
+    font-family: "Kode Mono", monospace;
+    margin-top: 100px;
+    margin-left: 40px;
+}
