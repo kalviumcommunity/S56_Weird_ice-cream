@@ -14,13 +14,17 @@ function Navbar(){
                 </ul>
             </div>
             <div className="image">
-                <img src="Ice cream.jpg"/>
+                <img src="880.jpg"/>
             </div>
             <div className="text">
+
                 <h1>Ready for a wild ride? <br/> Dive into a world of unexpected <br/> flavours with our eccentric ice cream selection !!!</h1>
             </div>
             <div className="text1">
                 <h1>Chalo let's drive into some werid flavours....</h1>
+            </div>
+            <div className="picture">
+                <img src=""></img>
             </div>
         </div>
 
