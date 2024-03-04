@@ -1,5 +1,21 @@
-const config = {
-    mongoURI: 'mongodb+srv://vaishnavisalunkhe:vaishu@cluster0.4ql84tu.mongodb.net/WeirdIceCream',
-  };
-  
-  module.exports = config;
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const connected = async () => { 
+  try {
+    await mongoose.connect(process.env.URI);
+
+    console.log("Database connected successfully");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const isConnected = () => {
+  return mongoose.connection.readyState === 1;
+};
+
+module.exports = {
+  isConnected,
+  connected,
+};
