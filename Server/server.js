@@ -27,6 +27,18 @@ app.get("/data", async (req, res) => {
   }
 });
 
+// app.post("/newdata",async(req,res)=>{
+//   try{
+//     const newdata=req.body;
+//     const createData=await WeirdIce.create(newdata);
+//     res.json(createData)
+
+//   }catch(error){
+//     console.log('error found',error)
+
+//   }
+// });
+
 
 
 
