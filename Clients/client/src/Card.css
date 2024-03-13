@@ -45,10 +45,15 @@
 .btns{
     display: flex;
     margin-left: 60px;
+    height: 30px;
+    border-radius: 20%;
+
     
 }
 .update ,.delete{
     width: 80px;
     margin-left: 25px;
+    background-color: rgb(2, 172, 2);
+
 
 }

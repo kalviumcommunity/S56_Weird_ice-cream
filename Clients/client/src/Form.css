@@ -1,71 +1,50 @@
-.Head {
-    width:40vw;
-    height:85vh;
-    margin: 3vw auto;
-    padding: 20px;
-   background-color:#fcacac;
-   filter: drop-shadow(20px 20px 20px red);
-   border-radius: 50px;
-   
-}
-.signup {
-    background-color: #ffffff;
-    color: #006317;
-    border: 1px solid #c3e6cb;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: 500;
-    border-radius: 30px;
-}
-.form {
-    margin-top:1vw;
+.contain {
     display: flex;
-    flex-direction: column;
-}
-h1{
-    color: #ff0000;
-}
-label {
-    margin-top:1vw;
-    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  .app {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .inp {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .err {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .button {
+    background-color: #4caf50;
     color: white;
-}
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"]
- {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-}
-.iceCreamFlavor{
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-
-}
-.err {
-    color: #dc3545;
-    margin-top: 2px;
-}
-button{
-    width:10vw;
-    margin-top:3vw;
-    padding: 10px ;
-    margin-left:15vw;
-    background-color: #00c220e4;
-    box-shadow: 2px 2px 3px #000000;
-    color: #fff;
     border: none;
-    border-radius: 5px;
-}
-.btnname{
-    margin-left: -350px;
-    margin-top: -20px;
-    background-color: black;
-    color: white;
-}
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  .image {
+    width: 100%;
+  }
+  
