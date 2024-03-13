@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './Components/Nav'
+import React from 'react';
+import { BrowserRouter, Route ,Routes} from 'react-router-dom';
+import Form from './Form';
+import Navbar from './Components/Nav';
 
 function App() {
-  
-
   return (
-    <Navbar/>
-  )
+    <BrowserRouter>
+    <Routes>
+        <Route path='/' element={<Navbar/>}/>
+        <Route path='/form' element={<Form />} />
+        </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

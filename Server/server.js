@@ -27,17 +27,19 @@ app.get("/data", async (req, res) => {
   }
 });
 
-// app.post("/newdata",async(req,res)=>{
-//   try{
-//     const newdata=req.body;
-//     const createData=await WeirdIce.create(newdata);
-//     res.json(createData)
-
-//   }catch(error){
-//     console.log('error found',error)
-
-//   }
-// });
+app.post("/post", async (req, res) => {
+  try {
+    console.log(req.body)
+    const newdata = req.body;
+    await WeirdIce.create(newdata).then((el)=>{
+      res.json(el)
+    }); 
+    // res.json(createData);
+  } catch (error) {
+    console.log('error found', error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 
 
