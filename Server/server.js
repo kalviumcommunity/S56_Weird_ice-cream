@@ -37,7 +37,7 @@ app.post("/post", async (req, res) => {
     // res.json(createData);
   } catch (error) {
     console.log('error found', error);
-    res.status(500).send("Internal Server Error");
+    // res.status(500).send("Internal Server Error");
   }
 });
 

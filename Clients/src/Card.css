@@ -50,10 +50,19 @@
 
     
 }
-.update ,.delete{
+.update1{
     width: 80px;
+    height: 30px;
     margin-left: 25px;
     background-color: rgb(2, 172, 2);
+    align-items: center;
+
+
+}
+.delete{
+    width: 80px;
+    margin-left: 40px;
+    background-color:rgb(2, 172, 2) ;
 
 
 }

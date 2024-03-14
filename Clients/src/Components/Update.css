@@ -1,0 +1,55 @@
+/* Update.css */
+.update {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    background-color: rgb(247, 132, 132);
+    filter: drop-shadow(20px 20px 20px red)
+
+}
+  
+.update h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    
+}
+  
+.update label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+.update input[type='text'],
+.update textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+  
+.update button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.update button:hover {
+    background-color: #0056b3;
+}
+  
+.update .inp {
+    height: 40px;
+}
+  
+.update .image {
+    height: 40px;
+}
+  
+  

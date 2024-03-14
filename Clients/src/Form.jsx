@@ -35,7 +35,7 @@ function App() {
   return (
     <>
       <div className='contain'>
-        <form className='form' onSubmit={handleSubmit(onSubmit)}>
+        <form className='form2' onSubmit={handleSubmit(onSubmit)}>
           <div className='app'>
             {Object.keys(errors).length > 0 && <p className='err'>Please fill out all required fields.</p>}
 
