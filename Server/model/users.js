@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
     types:String,
     description:String,
     organic:Boolean,
-    main_ingredients:Array
+    main_ingredients:Array,
+    img:String
 });
 
 // Define the model
