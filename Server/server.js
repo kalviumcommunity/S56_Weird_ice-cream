@@ -5,7 +5,8 @@ const app = express();
 const port = process.env.PUBLIC_PORT || 3000;
 const mongoose = require('mongoose');
 const {isConnected,connected,} = require("./Config/db");
-const route = require("./route")
+const route = require("./route");
+const weridice = require('./Validation.js');
 
 app.use(express.json())
 app.use(cors())
@@ -28,17 +29,25 @@ app.get("/data", async (req, res) => {
 });
 
 app.post("/post", async (req, res) => {
-  try {
-    console.log(req.body)
-    const newdata = req.body;
-    await WeirdIce.create(newdata).then((el)=>{
-      res.json(el)
-    }); 
-    // res.json(createData);
-  } catch (error) {
-    console.log('error found', error);
-    // res.status(500).send("Internal Server Error");
+  const {error} = weridice(req.body);
+  console.log(error);
+  if(error){
+    return res
+    .status(400)
+    .json({
+      error:"Invalid data given",
+      message:"Invalid"
+    })
   }
+  WeirdIce.create(req.body)
+  .then((data)=>{
+    res.json(data);
+  })
+  .catch((err)=>{
+    res.json(err);
+  })
+
+
 });
 
 
