@@ -5,30 +5,17 @@ import axios from 'axios';
 import './Form.css';
 
 function App() {
-  
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const navigate = useNavigate();
 
-  const [icecream,setIcecream] = useState({
-    name : "",
-    categories :"",
-    type : "",
-    description : "",
-    organic : "",
-    mainIngredients : "" ,
-    img : " "
-  })
-  
   const onSubmit = async (data) => {
-    console.log(data);
-
     try {
-      await axios.post('http://localhost:3000/post', data)
-      console.log("data posted successfully!")
+      const res = await axios.post("http://localhost:3000/post", data);
+      console.log("Data posted successfully!");
       reset();
       navigate('/');
     } catch (error) {
-      console.error(error);
+      console.error(error.message);
     }
   };
 
@@ -61,10 +48,10 @@ function App() {
             <input
               className='inp'
               type='text'
-              name='type'
-              {...register('type', { required: 'Type is required' })}
+              name='types'
+              {...register('types', { required: 'Type is required' })}
             />
-            {errors.type && <p className='err'>{errors.type.message}</p>}
+            {errors.types && <p className='err'>{errors.types.message}</p>}
 
             <label>Description:</label>
             <textarea
@@ -90,13 +77,19 @@ function App() {
             <input
               className='inp'
               type='text'
-              name='mainIngredients'
-              {...register('mainIngredients', { required: 'Main Ingredients are required' })}
+              name='main_ingredients'
+              {...register('main_ingredients', { required: 'Main Ingredients are required' })}
             />
-            {errors.mainIngredients && <p className='err'>{errors.mainIngredients.message}</p>}
+            {errors.main_ingredients && <p className='err'>{errors.main_ingredients.message}</p>}
 
             <label>Image</label>
-            <input className='image' type='text'></input>
+            <input
+              className='image'
+              type='text'
+              name='img'
+              {...register('img', { required: 'Image URL is required' })}
+            />
+            {errors.img && <p className='err'>{errors.img.message}</p>}
 
             <input type='submit' value='Submit' className='button' />
           </div>

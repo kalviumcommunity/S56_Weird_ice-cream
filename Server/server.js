@@ -1,18 +1,17 @@
 const express = require('express');
-const WeirdIce = require("./model/users.js")
+const {WeirdIce,validateIcecreams} = require("./model/users.js")
 const cors = require("cors")
 const app = express();
 const port = process.env.PUBLIC_PORT || 3000;
 const mongoose = require('mongoose');
 const {isConnected,connected,} = require("./Config/db");
 const route = require("./route")
+const joi = require("joi")
 
 app.use(express.json())
 app.use(cors())
 connected()
-// define the ping route
 app.get("/",(req , res )=>{
-  // res.send("This is the first route page")
   res.json({"Database Connection" : isConnected()?"Connected" : "Not Connected"})
 })
 app.get("/ping",(req , res )=>{res.send("pong")})
@@ -28,18 +27,20 @@ app.get("/data", async (req, res) => {
 });
 
 app.post("/post", async (req, res) => {
+  console.log(req.body)
+  const validation = validateIcecreams(req.body);
+  if (validation.error) {
+    return res.status(500).json({ error: validation.error.details[0].message });
+  }
   try {
-    console.log(req.body)
-    const newdata = req.body;
-    await WeirdIce.create(newdata).then((el)=>{
-      res.json(el)
+    await WeirdIce.create(req.body).then((el) => {
+      res.json(el);
     }); 
-    // res.json(createData);
   } catch (error) {
-    console.log('error found', error);
-    // res.status(500).send("Internal Server Error");
+    console.log(error);
   }
 });
+
 
 
 

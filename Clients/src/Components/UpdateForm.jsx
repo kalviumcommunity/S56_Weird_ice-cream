@@ -25,7 +25,6 @@ function UpdateForm() {
                 .then((res) => {
                     console.log(res);
                 });
-            // Fix: Correct the function name Navigate() to navigate()
             navigate("/");
         } catch (err) {
             console.log(err);
