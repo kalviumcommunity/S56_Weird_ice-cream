@@ -29,7 +29,7 @@ app.get("/data", async (req, res) => {
 });
 
 app.post("/post", async (req, res) => {
-  const {error} = validateData(req.body);
+  const {error} = weridice(req.body);
   console.log(error);
   if(error){
     return res
@@ -39,7 +39,7 @@ app.post("/post", async (req, res) => {
       message:"Invalid"
     })
   }
-  weridice.create(req.body)
+  WeirdIce.create(req.body)
   .then((data)=>{
     res.json(data);
   })
@@ -47,15 +47,7 @@ app.post("/post", async (req, res) => {
     res.json(err);
   })
 
-  // try {
-  //   console.log(req.body)
-  //   const newdata = req.body;
-  //   await WeirdIce.create(newdata).then((el)=>{
-  //     res.json(el)
-  //   }); 
-  // } catch (error) {
-  //   console.log('error found', error);
-  // }
+
 });
 
 

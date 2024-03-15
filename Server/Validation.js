@@ -13,7 +13,7 @@ const weridice = Joi.object({
     main_ingredients:Joi.string().required(),
     img:Joi.string().required()
 })
-const validateData = validator(weridice)
+const icecream = validator(weridice)
 
 
 module.exports = weridice;
