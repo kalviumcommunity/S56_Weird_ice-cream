@@ -1,5 +1,5 @@
 const express = require ('express')
-const WeirdIce = require('./model/users')
+const {WeirdIce} = require('./model/users')
 const router = express.Router()
 router.get('/get',(req,res)=>{
     res.send("It is a get request")
@@ -24,13 +24,6 @@ router.put('/update/:id',async(req,res)=>{
 router.patch('/patch',(req,res)=>{
     res.send("It is a patch request")
 })
-// router.delete('/delete/:id',(req,res)=>{
-//     const id = req.params.id;
-//     WeirdIce.findByIdAndDelete({_id:id})
-//     .then (res => res.json(res))
-//     .catch (err => res.json(err))
-
-// })
 
 router.delete('/deleteuser/:id',(req,res)=>{
     const id = req.params.id;
@@ -38,6 +31,4 @@ router.delete('/deleteuser/:id',(req,res)=>{
     .then (result => res.json(result))
     .catch (err => res.json(err))
 })
-
-
 module.exports = router
