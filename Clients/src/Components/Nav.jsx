@@ -36,6 +36,9 @@ function Navbar(){
             <div className="Register">
             <Link to="/form"> <button className="button">Register</button></Link>
             </div>
+            <div className="loginbtn">
+            <Link to="/Login"> <button className="login">LOGIN</button></Link>
+            </div>
             <div className="image">
                 <img src="880.jpg"/>
             </div>
@@ -46,7 +49,6 @@ function Navbar(){
             <div className="text1">
                 <h1 className="pg">Chalo let's drive into some werid flavours....</h1>
             </div>
-            
             <div className="display">
            {data.map((ele,i)=>(
             <Card key={i} {...ele} fetchData={fetchData} />
