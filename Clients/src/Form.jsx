@@ -9,9 +9,14 @@ function App() {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
+    console.log(data)
+    let userDataPost = {...data,user:localStorage.getItem("users")}
+    console.log(userDataPost)
     try {
-      const res = await axios.post("http://localhost:3000/post", data);
+      const res = await axios.post("http://localhost:3000/post",userDataPost);
       console.log("Data posted successfully!");
+      
+
       reset();
       navigate('/');
     } catch (error) {

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const joi = require("joi")
 
-const userSchema = new mongoose.Schema({
+const icecreamSchema = new mongoose.Schema({
     name: {
         type:String,
         required:true
@@ -29,8 +29,18 @@ const userSchema = new mongoose.Schema({
     img:{
         type:String,
         required:true
+    },
+    user:{
+        type:String
     }
 });
+
+const userSchema = new mongoose.Schema({
+    user:{
+        type: String
+    }
+})
+
 
 const validateIcecreams = (icecream)=>{
     const schema = joi.object({
@@ -40,10 +50,14 @@ const validateIcecreams = (icecream)=>{
     description:joi.string().required(),
     organic:joi.string().required(),
     main_ingredients:joi.string().required(),
-    img:joi.string().required()
+    img:joi.string().required(),
+    user:joi.string().required()
     })
     return schema.validate(icecream)
 }
-const WeirdIce = mongoose.model("icecreams", userSchema);
 
-module.exports =  {WeirdIce,validateIcecreams} ;
+const userModel = mongoose.model("users",userSchema)
+const WeirdIce = mongoose.model("icecreams", icecreamSchema);
+
+
+module.exports =  {WeirdIce,validateIcecreams,userModel} ;

@@ -21,7 +21,7 @@ function UpdateForm() {
     const handleUpdate = () => {
         console.log(icecream);
         try {
-            axios.put(`http://localhost:3000/update/${id}`, icecream)
+            axios.put(`https://s56-weird-ice-cream-2.onrender.com/update/${id}`, icecream)
                 .then((res) => {
                     console.log(res);
                 });

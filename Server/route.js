@@ -1,5 +1,5 @@
 const express = require('express');
-const { WeirdIce } = require('./model/users');
+const { WeirdIce,userModel } = require('./model/users');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 
@@ -22,11 +22,17 @@ router.put('/update/:id', async (req, res) => {
 });
 
 router.post("/auth", (req, res) => {
+    console.log(req.body)
     const { username } = req.body;
     const user = { name: username };
     const accessToken = jwt.sign(user, process.env.Access_Token);
+    userModel.create({user:username})
+    
+    
     res.json({ accessToken: accessToken });
 });
+
+
 
 router.patch('/patch', (req, res) => {
     res.send("It is a patch request");
