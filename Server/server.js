@@ -1,5 +1,5 @@
 const express = require('express');
-const {WeirdIce,validateIcecreams} = require("./model/users.js")
+const {WeirdIce,validateIcecreams,userModel} = require("./model/users.js")
 const cors = require("cors")
 const app = express();
 const port = process.env.PUBLIC_PORT || 3000;
@@ -42,6 +42,10 @@ app.post("/post", async (req, res) => {
 });
 
 
+app.get("/user",async(req,res)=>{
+  let ans = await userModel.find({})
+  res.send(ans)
+})
 
 
 

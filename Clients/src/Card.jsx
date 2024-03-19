@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Card = (props)=>{
     const handleDel = () => {
-        axios.delete(`http://localhost:3000/deleteuser/${props._id}`)
+        axios.delete(`https://s56-weird-ice-cream-2.onrender.com/deleteuser/${props._id}`)
         .then((res)=>{
             console.log(res)
             props.fetchData()
